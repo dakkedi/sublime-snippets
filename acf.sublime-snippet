@@ -1,0 +1,78 @@
+<snippet>
+	<content><![CDATA[
+if (have_rows('standard_block')) :
+	while (have_rows('standard_block')) : the_row();
+		\$layout = get_row_layout();
+		switch (\$layout) :
+			case 'images_block':
+				\$nrOfImages = count(get_sub_field('images'));
+				if (have_rows('images')): 
+					\$class = '';
+					if (\$nrOfImages > 1) \$class = 'col-md-6';
+					else \$class = 'col-md-12';
+					?>
+					<div class="container-fluid container-spacing">
+						<div class="row">
+							<div class="col-sm-8 col-sm-offset-2">
+								<div class="standard-gallery">
+									<div class="row">
+										<?php 
+										while (have_rows('images')) : the_row();
+											\$image = wp_get_attachment_image_src(get_sub_field('image'), 'large_standard');
+											\$image = \$image[0];
+											?>
+											<div class="<?php echo \$class; ?> pad-top-bot-10">
+												<img src="<?php echo \$image; ?>" class="img-responsive" style="margin-left:auto;margin-right:auto;">
+											</div>
+											<?php 
+										endwhile; 
+										?> 
+				
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<?php
+				endif;
+				break;
+			case 'text_block':
+				\$class = '';
+				if (get_sub_field('use_card')) \$class .='card ';
+				ob_start();
+				?>
+				<div class="card card-big-spacing"><div class="card-content">
+				<?php \$cardStart = ob_get_clean(); ?>
+				
+				<?php 
+				ob_start();
+				?>
+				</div></div>
+				<?php \$cardEnd = ob_get_clean(); ?>
+					<div class="container container-spacing text-center">
+						<?php echo get_sub_field('use_card') ? \$cardStart : ''; ?>
+							<div class="row">
+								<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+									<?php if (get_sub_field('header')) : ?>
+										<h3 class="marg-bottom-70"><?php echo get_sub_field('header'); ?></h3>
+									<?php endif; ?>
+									<?php if (get_sub_field('content')) : ?>
+										<?php echo get_sub_field('content'); ?>
+									<?php endif; ?>
+								</div>
+							</div>
+						<?php echo get_sub_field('use_card') ? \$cardEnd : ''; ?>
+					</div>
+				<?php
+				break;
+			default:
+				break;
+		endswitch; 
+	endwhile;
+endif;
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>acf</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>
