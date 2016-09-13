@@ -10,8 +10,10 @@ Now, all you need to do is start using the snippets.
 
 # List of snippets
 
-remote_addr // gives the if-case with $_SERVER['REMOTE_ADDR'] 
-media-query-sass // Bootstrap media query with sass syntax 
-acf // Advanced custom fields plugin with WP, using flexible content and repeater-field 
+<ul>
+  <li>remote_addr // gives the if-case with $_SERVER['REMOTE_ADDR']</li>
+  <li>media-query-sass // Bootstrap media query with sass syntax</li>
+  <li>acf // Advanced custom fields plugin with WP, using flexible content and repeater-field</li>
+</ul>
 
 I'll enter and update a list with all snippets here as we go. 
