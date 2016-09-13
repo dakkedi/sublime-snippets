@@ -1,7 +1,7 @@
 <snippet>
 	<content>
 <![CDATA[
-if (\$_SERVER['REMOTE_ADDR']) :
+if (\$_SERVER['REMOTE_ADDR'] == '$1') :
 
 endif;
 ]]>
