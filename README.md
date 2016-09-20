@@ -19,3 +19,9 @@ Now, all you need to do is start using the snippets.
 </ul>
 
 I'll enter and update a list with all snippets here as we go. 
+
+# Todo
+<ul>
+  <li>Better structure for the list</li>
+  <li>Better name-structure for the snippets</li>
+</ul>
