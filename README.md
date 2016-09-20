@@ -14,6 +14,8 @@ Now, all you need to do is start using the snippets.
   <li>remote_addr // gives the if-case with $_SERVER['REMOTE_ADDR']</li>
   <li>media-query-sass // Bootstrap media query with sass syntax</li>
   <li>acf // Advanced custom fields plugin with WP, using flexible content and repeater-field</li>
+  <li>translate_string // Creates syntax for wordpress php translate-able text</li>
+  
 </ul>
 
 I'll enter and update a list with all snippets here as we go. 
